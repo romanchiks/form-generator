@@ -14,11 +14,6 @@ export default defineComponent({
     return {
       breadCrumbs: [
         {
-          text: "Главная страница",
-          disabled: false,
-          to: "/",
-        },
-        {
           text: "Пример формы",
           disabled: true,
         },
@@ -163,6 +158,13 @@ export default defineComponent({
 .form-example {
   max-width: 1200px;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 1200px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   & .breadcrumbs {
     padding: 0;
