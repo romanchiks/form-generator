@@ -100,7 +100,10 @@ export default defineComponent({
         "field-7": {
           label: "Комментарий",
           rows: 5,
-          rules: [(v) => v?.length > 1000 || "Слишком длинный комментарий"],
+          rules: [
+            (v) =>
+              v === null || v.length < 1000 || "Слишком длинный комментарий",
+          ],
         },
       },
       submittedForm: {},
