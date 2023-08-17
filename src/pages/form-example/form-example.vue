@@ -66,6 +66,11 @@ export default defineComponent({
           type: "textarea",
           value: null,
         },
+        {
+          id: "field-8",
+          type: "textarea",
+          value: "дефолтный текст",
+        },
       ],
       fieldsConfig: {
         "field-1": {
@@ -142,6 +147,12 @@ export default defineComponent({
           @submit="submitForm($event)"
         >
           <template #header>Пример формы</template>
+          <template #field-8="{ field, index }">
+            <p>
+              Пример подмены элемента формы: value {{ field.value }}, index
+              {{ index }}
+            </p>
+          </template>
         </form-generator>
       </section>
       <section class="form-example__preview preview">
